@@ -18,9 +18,9 @@ public class Program {
 		
 		DateTimeFormatter fm1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		
-		System.out.print("Check-in: ");
+		System.out.print("Check-in(dd/MM/yyy): ");
 		LocalDate checkin = LocalDate.parse(sc.next(),fm1);
-		System.out.print("Check-out: ");
+		System.out.print("Check-out(dd/MM/yyy): ");
 		LocalDate checkout = LocalDate.parse(sc.next(),fm1);
 	
 		Reserva Gui = new  Reserva(numeroQuarto, checkin, checkout);
