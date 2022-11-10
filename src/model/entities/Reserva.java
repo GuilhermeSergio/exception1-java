@@ -34,9 +34,16 @@ public class Reserva {
 		Duration d1 = Duration.between(checkin.atTime(0, 0), checkout.atTime(0, 0));
 		return d1.toDays();
 	}
-	public void updateDatas(LocalDate checkout, LocalDate checkin) {
-		this.checkin = checkin;
-		this.checkout = checkout;
+	public String updateDatas(LocalDate checkout, LocalDate checkin) {
+		LocalDate now = LocalDate.now();
+		if(now.isBefore(checkin)&&now.isBefore(checkout)&&checkin.isBefore(checkout)) {
+			this.checkin = checkin;
+			this.checkout = checkout;
+			System.out.print(toString());
+			return "Sucesso";
+		}
+		System.out.print("Datas inconsistentes!");
+		return null;
 	}
 	
 	@Override
