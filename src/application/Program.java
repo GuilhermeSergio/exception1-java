@@ -41,6 +41,9 @@ public class Program {
 		catch(DomainException e) {
 			System.out.print("\nMensagem da Reserva: "+e.getMessage());
 		}
+		catch(RuntimeException e) {
+			System.out.print("Erro desconhecido!");
+		}
 	
 		sc.close();
 	}
